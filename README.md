@@ -21,6 +21,12 @@ Running databases in container
 - https://squirrel-sql.sourceforge.io/
 
 
+### SQL Developer/Oracle
+
+- https://www.oracle.com/br/database/sqldeveloper/
+
+
+
 ## Databases
 
 ### Postgres
@@ -64,6 +70,48 @@ docker run -d \
 
 ### Oracle
 
+- https://medium.com/xp-inc/dica-r%C3%A1pida-criando-base-de-dados-oracle-vers%C3%A3o-21-3-0-no-docker-357b05754b84
+
+
+* Oracle Database 23c (23.3.0) Free
+* Oracle Database 21c (21.3.0) Enterprise Edition, Standard Edition 2 and Express Edition (XE)
+* Oracle Database 19c (19.3.0) Enterprise Edition and Standard Edition 2
+* Oracle Database 18c (18.4.0) Express Edition (XE)
+* Oracle Database 18c (18.3.0) Enterprise Edition and Standard Edition 2
+* Oracle Database 12c Release 2 (12.2.0.2) Enterprise Edition and Standard Edition 2
+* Oracle Database 12c Release 1 (12.1.0.2) Enterprise Edition and Standard Edition 2
+* Oracle Database 11g Release 2 (11.2.0.2) Express Edition (XE)
+
+ Parameters:
+    -v: version to build
+        Choose one of: 11.2.0.2  12.1.0.2  12.2.0.1  18.3.0  18.4.0  19.3.0  21.3.0 23.3.0
+    -t: image_name:tag for the generated docker image
+    -e: creates image based on 'Enterprise Edition'
+    -s: creates image based on 'Standard Edition 2'
+    -x: creates image based on 'Express Edition'
+    -f: creates image based on Database 'Free'
+    -i: ignores the MD5 checksums
+    -p: creates and extends image using the patching extension
+    -b: build base stage only (Used by extensions)
+    -o: passes on container build option
+
+```sh
+git clone https://github.com/oracle/docker-images
+cd docker-images/OracleDatabase/SingleInstance/dockerfiles
+./buildContainerImage.sh -v 23.3.0 -f
+
+```
+
+```sh
+docker run -d \
+    -e ORACLE_PWD=my_pwd \
+    -e ORACLE_CHARACTERSET=AL32UTF8 \
+    -p 51521:1521 \
+    -p 55500:5500 \    
+    oracle/database:23.3.0-free
+```
+
+
 ### Redis
 
 
@@ -80,12 +128,4 @@ docker run -d \
     -p 27017:27017 \
     mongo
 ```
-
-## References
-
-- https://superuser.com/questions/816143/how-to-run-pip-in-non-interactive-mode
-- https://docs.pytest.org/en/stable/reference/customize.html
-- https://www.activestate.com/resources/quick-reads/how-to-manually-install-python-packages/
-- https://phoenixnap.com/kb/how-to-install-python-3-ubuntu
-- https://serverspace.io/support/help/python-3-virtual-environment-on-ubuntu-22-04/
 
