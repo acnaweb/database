@@ -64,8 +64,12 @@ docker run -d \
 
 ### Oracle
 
+### Redis
+
 
 ### MongoDB
+
+> Info: Mongo Client https://www.mongodb.com/pt-br/products/tools/compass
 
 - https://hub.docker.com/_/mongo
 
