@@ -47,13 +47,35 @@ docker run -d \
     mysql
 ```
 
+### SQL Server
+
+- https://hub.docker.com/_/microsoft-mssql-server
+
+> MSSQL_SA_PASSWORD -> 8 characters of at least three of these four categories: uppercase letters, lowercase letters, numbers and non-alphanumeric symbols
+
+```sh
+docker run -d \
+    -e MSSQL_SA_PASSWORD=1q2w3e4R@ \
+    -e "ACCEPT_EULA=Y" \
+    -p 1433:1433 \
+    mcr.microsoft.com/mssql/server:latest 
+```
+
+
 ### Oracle
 
 
-
-### SQL Server
-
 ### MongoDB
+
+- https://hub.docker.com/_/mongo
+
+```sh
+docker run -d \
+    -e MONGO_INITDB_ROOT_USERNAME=root \
+    -e MONGO_INITDB_ROOT_PASSWORD=root_pwd \
+    -p 27017:27017 \
+    mongo
+```
 
 ## References
 
