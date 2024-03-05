@@ -104,10 +104,10 @@ cd docker-images/OracleDatabase/SingleInstance/dockerfiles
 
 ```sh
 docker run -d \
-    -e ORACLE_PWD=my_pwd \
+    -e ORACLE_PWD=manager \
     -e ORACLE_CHARACTERSET=AL32UTF8 \
-    -p 51521:1521 \
-    -p 55500:5500 \    
+    -p 1521:1521 \
+    -p 5500:5500 \
     oracle/database:23.3.0-free
 ```
 
@@ -123,7 +123,7 @@ docker run -d \
 
 ```sh
 docker run -d \
-    -e MONGO_INITDB_ROOT_USERNAME=root \
+    -e MONGO_INITDB_ROOT_USERNAME=mongo \
     -e MONGO_INITDB_ROOT_PASSWORD=root_pwd \
     -p 27017:27017 \
     mongo
