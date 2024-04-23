@@ -75,7 +75,7 @@ docker run -d \
     -e ORACLE_CHARACTERSET=AL32UTF8 \
     -p 1521:1521 \
     -p 5500:5500 \
-    oracle/database:23.3.0-free
+    container-registry.oracle.com/database/free:latest
 ```
 
 ### Redis
