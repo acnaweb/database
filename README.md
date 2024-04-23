@@ -78,6 +78,19 @@ docker run -d \
     container-registry.oracle.com/database/free:latest
 ```
 
+* Exemplo de criação de usuário "Developer" com a senha "Manager"
+
+```sql
+ALTER SESSION SET "_ORACLE_SCRIPT"=true;
+
+CREATE USER developer
+IDENTIFIED BY manager
+DEFAULT TABLESPACE users;
+
+GRANT create session TO developer;
+GRANT resource TO developer;
+```
+
 ### Redis
 
 ### MongoDB
