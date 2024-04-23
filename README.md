@@ -85,7 +85,8 @@ ALTER SESSION SET "_ORACLE_SCRIPT"=true;
 
 CREATE USER developer
 IDENTIFIED BY manager
-DEFAULT TABLESPACE users;
+DEFAULT TABLESPACE users
+QUOTA UNLIMITED on users;
 
 GRANT create session TO developer;
 GRANT resource TO developer;
