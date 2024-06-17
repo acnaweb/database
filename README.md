@@ -71,6 +71,8 @@ docker pull container-registry.oracle.com/database/free:latest
 
 ```sh
 docker run -d \
+    --name oracle \
+    --rm \
     -e ORACLE_PWD=manager \
     -e ORACLE_CHARACTERSET=AL32UTF8 \
     -p 1521:1521 \
