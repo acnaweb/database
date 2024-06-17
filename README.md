@@ -18,6 +18,8 @@ Running databases in container
 
 ```sh
 docker run -d \
+    --name postgres \
+    --rm \
     -e POSTGRES_USER=new_user \
     -e POSTGRES_PASSWORD=my_pwd \
     -p 5432:5432 \
@@ -29,6 +31,8 @@ docker run -d \
 
 ```sh
 docker run -d \
+    --name mysql \
+    --rm \
     -e MYSQL_ROOT_PASSWORD=root_pwd \
     -e MYSQL_USER=new_user \
     -e MYSQL_PASSWORD=my_pwd \
@@ -44,6 +48,8 @@ docker run -d \
 
 ```sh
 docker run -d \
+    --name sqlserver \
+    --rm \
     -e MSSQL_SA_PASSWORD=1q2w3e4R@ \
     -e "ACCEPT_EULA=Y" \
     -p 1433:1433 \
@@ -105,6 +111,8 @@ GRANT resource TO developer;
 
 ```sh
 docker run -d \
+    --name mongodb \
+    --rm \
     -e MONGO_INITDB_ROOT_USERNAME=mongo \
     -e MONGO_INITDB_ROOT_PASSWORD=root_pwd \
     -p 27017:27017 \
