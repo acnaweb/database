@@ -98,6 +98,7 @@ QUOTA UNLIMITED on users;
 
 GRANT create session TO developer;
 GRANT resource TO developer;
+
 ```
 ### Neo4J
 
